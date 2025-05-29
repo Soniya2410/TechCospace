@@ -43,8 +43,8 @@ This project is a React Native news app built with the following key features:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/project-name.git
-cd project-name
+git clone https://github.com/Soniya2410/TechCospace.git
+cd TechCospace
 ```
 # Install dependencies
 npm install
