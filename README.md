@@ -1,97 +1,84 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native News App
 
-# Getting Started
+This is a React Native news app that fetches and displays articles from an API. It supports offline caching, bookmarks, pull-to-refresh functionality, and adapts to dark and light themes. The app uses React Navigation for screen transitions and Context API for theming.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## Table of Contents
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- [Project Overview](#project-overview)  
+- [Folder Structure](#folder-structure)  
+- [Setup Instructions](#setup-instructions)  
+- [Assumptions / Known Issues](#assumptions--known-issues)  
+- [Improvements Planned](#improvements-planned)  
+- [Learn More](#learn-more)  
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
+## Project Overview
+
+This project is a React Native news app built with the following key features:
+
+- Fetches news articles from a remote API  
+- Offline caching of articles using AsyncStorage  
+- Bookmarks for saving favorite articles  
+- Pull-to-refresh to update news feed  
+- Dark and light theme support using Context API and system preferences  
+- Navigation between screens using React Navigation  
+
+---
+
+## Folder Structure
+
+/src
+/screens/components # Reusable UI components
+/screens # Screen components (Home, Detailed, Splash, etc.)
+/services # API calls and data fetching logic
+/context # Context providers (e.g., ThemeProvider)
+/utils # Utility functions/helpers
+/App.tsx # Root component with navigation setup
+
+## Setup Instructions
+
+### Clone the repository
+
+```bash
+git clone https://github.com/yourusername/project-name.git
+cd project-name
+```
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Start Metro bundler
+
 npm start
-
-# OR using Yarn
+# or
 yarn start
-```
+# Run the app Android
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
 npm run android
-
-# OR using Yarn
+# or
 yarn android
-```
 
-### iOS
+# Run the app iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
 npm run ios
-
-# OR using Yarn
+# or
 yarn ios
-```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+# Assumptions / Known Issues
+* The news API is assumed to be reliable; error handling for API failures is basic.
+* Offline caching uses AsyncStorage, which may have limitations on storage size.
+* Theme changes are automatic based on system preferences; no manual toggle yet.
+* Some platform-specific quirks might exist with dependencies.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
 
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# Improvements Planned
+* Add manual theme toggle to override system theme.
+* Implement pagination/infinite scrolling for better performance.
+* Switch offline storage to a more robust database (Realm/SQLite).
+* Increase test coverage for integration and UI testing.
+* Add localization/multi-language support.
+* Optimize image loading and caching strategies.
