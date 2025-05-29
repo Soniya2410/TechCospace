@@ -31,12 +31,12 @@ This project is a React Native news app built with the following key features:
 ## Folder Structure
 
 /src
-/screens/components # Reusable UI components
-/screens # Screen components (Home, Detailed, Splash, etc.)
-/services # API calls and data fetching logic
-/context # Context providers (e.g., ThemeProvider)
-/utils # Utility functions/helpers
-/App.tsx # Root component with navigation setup
+* /screens/components # Reusable UI components
+* /screens # Screen components 
+* /services # API calls and data fetching logic
+* /context # Context providers 
+* /utils # Utility functions/helpers
+* /App.tsx # Root component with navigation setup
 
 ## Setup Instructions
 
